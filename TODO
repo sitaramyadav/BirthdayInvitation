@@ -1,0 +1,29 @@
+                      Requirement's
+===========================================================================================
+Given a list of records in file;
+
+Print the label on invitation cover
+Input format:-
+    firstName,lastName,gender, age, city, state,country
+Output format:-
+    a: Mr./Ms First Last.
+    b: Ms./Mr Last First.
+
+
+
+================================================================================================
+
+                                    TODO
+
+=================================================================================================
+
+ Read the list of records.
+ Split the detail of each person.
+ Split the each detail of person.
+ Store the all detail.
+ add prefix
+    a: Mr./Ms FirstName
+    b: Ms./Mr Last ,First;
+
+
+

@@ -9,6 +9,6 @@ public class LastNameFirstFormatTest {
         LastNameFirstFormat lastNameFirstFormat = new LastNameFirstFormat("./data/sampleData");
         String expected = "Mr Barrows Julius\n" +
                 "Ms Dooley Melody";
-        assertEquals(expected, lastNameFirstFormat.printData());
+        assertEquals(expected, lastNameFirstFormat.guestInfo());
     }
 }

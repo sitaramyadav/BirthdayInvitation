@@ -10,7 +10,7 @@ public class LabelPrinterMain {
             if(args[0].equals("-f")){
                 Format firstNameFirst;
                 firstNameFirst = new FirstNameFirstFormat("./data/data.txt");
-                System.out.println(firstNameFirst.printData());
+                System.out.println(firstNameFirst.guestInfo());
             }
             if(args[0].equals("-l")){
                 System.out.println("hello");

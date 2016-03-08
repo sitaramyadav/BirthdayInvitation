@@ -25,5 +25,15 @@ Output format:-
     a: Mr./Ms FirstName
     b: Ms./Mr Last ,First;
 
+ Usage:-
+
+runnableFile command fileName
+
+java LabelPrinterMain -fl record.txt
+Mr John Smith
+
+java LabelPrinterMain -lf record.txt
+Mr Smith John
+
 
 

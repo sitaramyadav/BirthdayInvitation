@@ -1,4 +1,5 @@
 public interface Format {
-    public String printData();
+    public String guestInfo();
     public String getGuestDetail();
+    public String guestInfoIncludingCountryName();
 }

@@ -8,7 +8,7 @@ public class FirstNameFirstFormatTest {
         FirstNameFirstFormat firstNameFirstFormat = new FirstNameFirstFormat("./data/sampleData");
         String expected = "Mr Julius Barrows\n" +
                 "Ms Melody Dooley";
-        assertEquals(expected, firstNameFirstFormat.printData());
+        assertEquals(expected, firstNameFirstFormat.guestInfo());
     }
 
 }

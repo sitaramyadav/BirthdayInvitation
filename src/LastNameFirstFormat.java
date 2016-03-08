@@ -34,7 +34,7 @@ public class LastNameFirstFormat implements Format{
             System.out.println(Arrays.toString(guestDetail));
             return result;
         }
-        public String printData(){
+        public String guestInfo(){
             String guestInfo;
             guestInfo = getGuestDetail();
             return guestInfo;

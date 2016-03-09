@@ -10,7 +10,7 @@ class DataReader  {
     }
 
     public List<String> getData() throws Exception{
-        List<String> list = new LinkedList<String>();
+        List<String> list = new LinkedList<>();
         FileReader file = new FileReader(this.file);
         BufferedReader reader = new BufferedReader(file);
         String line = reader.readLine();

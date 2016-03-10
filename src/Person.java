@@ -41,19 +41,23 @@ public class Person {
             return "Ms"+" "+this.getLastName()+" "+this.getFirsName();
 
     }
-    public String getFirstLastCasualWithCountryName(){
-        if(this.getGender().equals("Male")){
-            return "Mr"+" "+this.getFirsName()+" "+this.getLastName()+" "+this.address.getCountryName();
-        } else
-            return "Ms"+" "+this.getFirsName()+" "+this.getLastName()+" "+this.address.getCountryName();
-
+    public String getFirstLastCasualWithCountryName(String countryName) {
+        if (countryName.equals(this.address.getCountryName())) {
+            if (this.getGender().equals("Male")) {
+                return "Mr" + " " + this.getFirsName() + " " + this.getLastName() + " " + this.address.getCountryName();
+            } else {
+                return "Ms" + " " + this.getFirsName() + " " + this.getLastName() + " " + this.address.getCountryName();
+            }
+        }
+        return "";
     }
 
-    public String getLastFirstCasualWithCountryName() {
-        if(this.getGender().equals("Male")){
+    public String getLastFirstCasualWithCountryName(String countryName) {
+            if (this.getGender().equals("Male")) {
             return "Mr"+" "+this.getLastName()+" "+this.getFirsName()+" "+this.address.getCountryName();
         } else
             return "Ms"+" "+this.getLastName()+" "+this.getFirsName()+" "+this.address.getCountryName();
+
     }
 
     public String getFirstLastCasualCountryAndAge(){

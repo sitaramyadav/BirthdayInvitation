@@ -33,11 +33,10 @@ public class GuestInfoTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        String expected = "Mr Julius Barrows Macedonia\n" +
-                "Ms Melody Dooley Bangladesh";
+        String expected = "Ms Melody Dooley Bangladesh";
         try {
             assert guestInfo != null;
-            assertEquals(expected, guestInfo.printLabelWithOptionFFC());
+            assertEquals(expected, guestInfo.printLabelWithOptionFFC("Bangaladesh"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -50,11 +49,10 @@ public class GuestInfoTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        String expected = "Mr Barrows Julius Macedonia\n" +
-                "Ms Dooley Melody Bangladesh";
+        String expected = "Ms Dooley Melody Bangladesh";
         try {
             assert guestInfo != null;
-            assertEquals(expected, guestInfo.printLabelWithOptionLFC());
+            assertEquals(expected, guestInfo.printLabelWithOptionLFC("Bangladesh"));
         } catch (Exception e) {
             e.printStackTrace();
         }

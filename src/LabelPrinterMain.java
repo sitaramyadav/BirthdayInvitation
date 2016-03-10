@@ -20,17 +20,17 @@ public class LabelPrinterMain {
                     e.printStackTrace();
                 }
             }
-            if(args[0].equals("-lf")){
+            if(args[0].equals("-lf") && args.length==3){
                 guestInfo = new GuestInfo(fileName);
-                System.out.print(guestInfo.printLabelWithOptionLL());
+                System.out.print(guestInfo.printLabelWithOptionLFC(args[2]));
             }
             if(args[0].equals("-ffc")){
                 guestInfo = new GuestInfo(fileName);
-                System.out.println(guestInfo);
+                System.out.println(guestInfo.printLabelWithOptionFFC("Bangaladesh"));
             }
             if(args[0].equals("lfc")){
                 guestInfo = new GuestInfo(fileName);
-                System.out.println(guestInfo.printLabelWithOptionLFC());
+                System.out.println(guestInfo.printLabelWithOptionLFC(args[2]));
             }
         }
     }

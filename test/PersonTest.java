@@ -9,8 +9,8 @@ public class PersonTest {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
-        City city = new City("Gkp");
-        State state = new State("U.P.");
+        String city = "Gkp";
+        String state = "U.P.";
         Country country = new Country("India");
         Address address = new Address(city,state,country);
         Person person = new Person(name,gender,age,address);
@@ -24,8 +24,8 @@ public class PersonTest {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
-        City city = new City("Gkp");
-        State state = new State("U.P.");
+       String city = "Gkp";
+        String state = "U.P.";
         Country country = new Country("India");
         Address address = new Address(city,state,country);
         Person person = new Person(name,gender,age,address);
@@ -39,8 +39,8 @@ public class PersonTest {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
-        City city = new City("Gkp");
-        State state = new State("U.P.");
+        String city = "Gkp";
+        String state = "U.P.";
         Country country = new Country("India");
         Address address = new Address(city,state,country);
         Person person = new Person(name,gender,age,address);
@@ -54,8 +54,8 @@ public class PersonTest {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
-        City city = new City("Gkp");
-        State state = new State("U.P.");
+        String city = "Gkp";
+       String state = "U.P.";
         Country country = new Country("India");
         Address address = new Address(city,state,country);
         Person person = new Person(name,gender,age,address);
@@ -71,8 +71,8 @@ public class PersonTest {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
-        City city = new City("Gkp");
-        State state = new State("U.P.");
+        String city = "Gkp";
+       String state = "U.P.";
         Country country = new Country("India");
         Address address = new Address(city,state,country);
         Person person = new Person(name,gender,age,address);
@@ -88,8 +88,8 @@ public class PersonTest {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
-        City city = new City("Gkp");
-        State state = new State("U.P.");
+        String city = "Gkp";
+       String state = "U.P.";
         Country country = new Country("India");
         Address address = new Address(city,state,country);
         Person person = new Person(name,gender,age,address);
@@ -103,13 +103,13 @@ public class PersonTest {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
-        City city = new City("Gkp");
-        State state = new State("U.P.");
+        String city = "Gkp";
+        String state = "U.P.";
         Country country = new Country("India");
         Address address = new Address(city,state,country);
         Person person = new Person(name,gender,age,address);
         String expected = "Mr Seeta Ram India";
-        assertEquals(expected,person.getFirstLastCasualWithCountryName());
+        assertEquals(expected,person.getFirstLastCasualWithCountryName("India"));
     }
     @Test
     public void testGetLastFirstCasualWithCountryName(){
@@ -117,21 +117,21 @@ public class PersonTest {
                 "","Ram");
         String gender = "Male";
         int age = 22;
-        City city = new City("Gkp");
-        State state = new State("U.P.");
+        String city = "Gkp";
+        String state = "U.P.";
         Country country = new Country("India");
         Address address = new Address(city,state,country);
         Person person = new Person(name,gender,age,address);
         String expected = "Mr Ram Seeta India";
-        assertEquals(expected,person.getLastFirstCasualWithCountryName());
+        assertEquals(expected,person.getLastFirstCasualWithCountryName("Bangaladesh"));
     }
     @Test
     public void testGetFirstLastCasualCountryAndAge(){
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
-        City city = new City("Gkp");
-        State state = new State("U.P.");
+        String city = "U.P.";
+        String state = "U.P.";
         Country country = new Country("India");
         Address address = new Address(city,state,country);
         Person person = new Person(name,gender,age,address);
@@ -143,8 +143,8 @@ public class PersonTest {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
-        City city = new City("Gkp");
-        State state = new State("U.P.");
+        String city = "Gkp";
+        String state = "U.P.";
         Country country = new Country("India");
         Address address = new Address(city,state,country);
         Person person = new Person(name,gender,age,address);

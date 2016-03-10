@@ -15,10 +15,8 @@ public class GuestInfo {
             guestInfo = (String)data.get(i);
             guestInformation = guestInfo.split(",");
             Name name = new Name(guestInformation[0], guestInformation[1]);
-            City city = new City(guestInformation[4]);
-            State state = new State(guestInformation[5]);
             Country country = new Country(guestInformation[6]);
-            Address address = new Address(city, state, country);
+            Address address = new Address(guestInformation[4], guestInformation[5], country);
             Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
             firstNameFirstFormat += person.getFirstLastCasualName();
             if (i < data.size()-1)
@@ -37,8 +35,8 @@ public class GuestInfo {
             guestInfo = (String) data.get(i);
             guestInformation = guestInfo.split(",");
             Name name = new Name(guestInformation[0], guestInformation[1]);
-            City city = new City(guestInformation[4]);
-            State state = new State(guestInformation[5]);
+            String city = guestInformation[4];
+            String state = guestInformation[5];
             Country country = new Country(guestInformation[6]);
             Address address = new Address(city, state, country);
             Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
@@ -49,20 +47,20 @@ public class GuestInfo {
         }
         return lastNameFirstFormat;
     }
-    public String printLabelWithOptionFFC() throws Exception{
+    public String printLabelWithOptionFFC(String countryName) throws Exception{
         String guestInfo, firstNameFirstWithCountry = "";
         String[] guestInformation;
         int i=0;
         while(i<data.size()) {
             guestInfo = (String) data.get(i);
-            guestInformation = guestInfo.split(",");
+            guestInformation = guestInfo.split("");
             Name name = new Name(guestInformation[0], guestInformation[1]);
-            City city = new City(guestInformation[4]);
-            State state = new State(guestInformation[5]);
+            String city = guestInformation[4];
+            String state = guestInformation[5];
             Country country = new Country(guestInformation[6]);
             Address address = new Address(city, state, country);
             Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
-            firstNameFirstWithCountry +=person.getFirstLastCasualWithCountryName();
+            firstNameFirstWithCountry +=person.getFirstLastCasualWithCountryName(countryName);
             if (i < data.size()-1)
                 firstNameFirstWithCountry+="\n";
             i++;
@@ -70,20 +68,20 @@ public class GuestInfo {
         return firstNameFirstWithCountry;
     }
 
-    public String printLabelWithOptionLFC() {
+    public String printLabelWithOptionLFC(String countryName) {
         String guestInfo,lastNameFirstFormat ="";
         String[] guestInformation;
         int i=0;
         while(i<data.size()) {
             guestInfo = (String) data.get(i);
-            guestInformation = guestInfo.split(",");
+            guestInformation = guestInfo.split("");
             Name name = new Name(guestInformation[0], guestInformation[1]);
-            City city = new City(guestInformation[4]);
-            State state = new State(guestInformation[5]);
+            String city = guestInformation[4];
+            String state = guestInformation[5];
             Country country = new Country(guestInformation[6]);
             Address address = new Address(city, state, country);
             Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
-            lastNameFirstFormat +=person.getLastFirstCasualWithCountryName();
+            lastNameFirstFormat +=person.getLastFirstCasualWithCountryName(countryName);
             if (i < data.size()-1) {
                 lastNameFirstFormat = lastNameFirstFormat +"\n";
             }

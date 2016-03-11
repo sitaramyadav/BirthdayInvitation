@@ -1,11 +1,17 @@
+package person;
+
 import org.junit.Test;
+import person.Address;
+import person.Country;
+import person.Name;
+import person.Person;
 
 import static org.junit.Assert.assertEquals;
 
 public class PersonTest {
 
     @Test
-    public void testGetFirsName() throws Exception {
+    public void getFirsNameGivesTheFirstNameFirstWithCasualName() throws Exception {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
@@ -20,7 +26,7 @@ public class PersonTest {
     }
 
     @Test
-    public void testGetLastName() throws Exception {
+    public void getLastNameGivesTheLastNameFirstWithCasualName() throws Exception {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
@@ -83,7 +89,7 @@ public class PersonTest {
     }
 
     @Test
-    public void testGetLastFirstCasualName() throws Exception {
+    public void testGetLastFirstCasualNameGivesTheLastFirstCasualName() throws Exception {
 
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
@@ -149,6 +155,6 @@ public class PersonTest {
         Address address = new Address(city,state,country);
         Person person = new Person(name,gender,age,address);
         String expected = "Mr Ram Seeta India 22";
-        assertEquals(expected,person.getLastFirstCasualCountryAndAge());
+        assertEquals(expected,person.getLastFirstCasualCountryAndAge("India",22));
     }
 }

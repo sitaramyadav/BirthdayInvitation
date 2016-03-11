@@ -1,3 +1,10 @@
+package lib;
+
+import person.Address;
+import person.Country;
+import person.Name;
+import person.Person;
+
 import java.util.List;
 
 public class GuestInfo {

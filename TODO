@@ -17,6 +17,7 @@ Output format:-
 
 =================================================================================================
 
+
  Read the list of records.
  Split the detail of each person.
  Split the each detail of person.
@@ -28,12 +29,43 @@ Output format:-
  Usage:-
 
 runnableFile command fileName
-
+----------------------------------------v1-----------------------------
 java LabelPrinterMain -fl record.txt
 Mr John Smith
 
 java LabelPrinterMain -lf record.txt
 Mr Smith John
+----------------------------------------v2-----------------------------
+java LabelPrinterMain -flc Bangaladesh record.txt
+Mr John Smith Bangaladesh
+
+java LabelPrinterMain -lfc Bangaladesh record.txt
+Mr Smith John Bangaladesh
+
+----------------------------------------v3-----------------------------
+java LabelPrinterMain -flca Bangaladesh 20 record.txt
+Mr John Smith Bangaladesh 20
+
+java LabelPrinterMain -lfca Bangaladesh 30 record.txt
+Mr Smith John Bangaladesh 30
 
 
+----------------------------------------v4-----------------------------
+java LabelPrinterMain -fla Bangalore Karnataka India record.txt
 
+                                +----------------------+
+                                | Mr John Smith        |
+                                |----------------------|
+                                | Bangalore, Karnataka |
+                                | India                |
+                                +----------------------+
+
+
+java LabelPrinterMain -lfa  Bangalore Karnataka
+
+                               +----------------------+
+                               | Mr Smith, John       |
+                               |----------------------|
+                               | New Delhi, Karnataka |
+                               | India                |
+                               +----------------------+

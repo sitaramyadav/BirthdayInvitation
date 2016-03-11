@@ -1,3 +1,5 @@
+package lib;
+
 import org.junit.Test;
 
 import java.util.LinkedList;

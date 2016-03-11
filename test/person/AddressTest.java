@@ -1,4 +1,8 @@
+package person;
+
 import org.junit.Test;
+import person.Address;
+import person.Country;
 
 import static org.junit.Assert.*;
 

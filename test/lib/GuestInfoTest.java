@@ -1,3 +1,6 @@
+package lib;
+
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -9,7 +12,7 @@ public class GuestInfoTest {
         String expected = "Mr Julius Barrows\n" +
                 "Ms Melody Dooley";
         try {
-            assertEquals(expected, guestInfo.printLabelWithOptionFF());
+            Assert.assertEquals(expected, guestInfo.printLabelWithOptionFF());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -20,7 +23,7 @@ public class GuestInfoTest {
         String expected = "Mr Barrows Julius\n" +
                 "Ms Dooley Melody";
         try {
-            assertEquals(expected, guestInfo.printLabelWithOptionLL());
+            Assert.assertEquals(expected, guestInfo.printLabelWithOptionLL());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -36,7 +39,7 @@ public class GuestInfoTest {
         String expected = "Ms Melody Dooley Bangladesh";
         try {
             assert guestInfo != null;
-            assertEquals(expected, guestInfo.printLabelWithOptionFFC("Bangaladesh"));
+            Assert.assertEquals(expected, guestInfo.printLabelWithOptionFFC("Bangaladesh"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -52,7 +55,7 @@ public class GuestInfoTest {
         String expected = "Ms Dooley Melody Bangladesh";
         try {
             assert guestInfo != null;
-            assertEquals(expected, guestInfo.printLabelWithOptionLFC("Bangladesh"));
+            Assert.assertEquals(expected, guestInfo.printLabelWithOptionLFC("Bangladesh"));
         } catch (Exception e) {
             e.printStackTrace();
         }

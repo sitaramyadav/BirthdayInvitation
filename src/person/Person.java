@@ -1,3 +1,8 @@
+package person;
+
+import person.Address;
+import person.Name;
+
 public class Person {
     private String gender;
     private Name name;
@@ -66,7 +71,7 @@ public class Person {
         } else
             return "Ms"+" "+this.getFirsName()+" "+this.getLastName()+" "+this.address.getCountryName()+" "+this.age;
     }
-    public String getLastFirstCasualCountryAndAge() {
+    public String getLastFirstCasualCountryAndAge(String india, int i) {
         if(this.getGender().equals("Male")){
             return "Mr"+" "+this.getLastName()+" "+this.getFirsName()+" "+this.address.getCountryName()+" "+this.age;
         } else

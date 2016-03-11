@@ -1,9 +1,6 @@
 package lib;
 
-import person.Address;
-import person.Country;
-import person.Name;
-import person.Person;
+import person.*;
 
 import java.util.List;
 
@@ -23,7 +20,8 @@ public class GuestInfo {
             guestInformation = guestInfo.split(",");
             Name name = new Name(guestInformation[0], guestInformation[1]);
             Country country = new Country(guestInformation[6]);
-            Address address = new Address(guestInformation[4], guestInformation[5], country);
+            State state = new State(guestInformation[5]);
+            Address address = new Address(state, country);
             Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
             firstNameFirstFormat += person.getFirstLastCasualName();
             if (i < data.size()-1)
@@ -42,10 +40,9 @@ public class GuestInfo {
             guestInfo = (String) data.get(i);
             guestInformation = guestInfo.split(",");
             Name name = new Name(guestInformation[0], guestInformation[1]);
-            String city = guestInformation[4];
-            String state = guestInformation[5];
+            State state = new State(guestInformation[5]);
             Country country = new Country(guestInformation[6]);
-            Address address = new Address(city, state, country);
+            Address address = new Address(state, country);
             Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
             lastNameFirstFormat +=person.getLastFirstCasualName();
             if (i < data.size()-1)
@@ -63,9 +60,9 @@ public class GuestInfo {
             guestInformation = guestInfo.split("");
             Name name = new Name(guestInformation[0], guestInformation[1]);
             String city = guestInformation[4];
-            String state = guestInformation[5];
+            State state = new State(guestInformation[5]);
             Country country = new Country(guestInformation[6]);
-            Address address = new Address(city, state, country);
+            Address address = new Address(state, country);
             Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
             firstNameFirstWithCountry +=person.getFirstLastCasualWithCountryName(countryName);
             if (i < data.size()-1)
@@ -83,10 +80,9 @@ public class GuestInfo {
             guestInfo = (String) data.get(i);
             guestInformation = guestInfo.split("");
             Name name = new Name(guestInformation[0], guestInformation[1]);
-            String city = guestInformation[4];
-            String state = guestInformation[5];
+            State state = new State(guestInformation[5]);
             Country country = new Country(guestInformation[6]);
-            Address address = new Address(city, state, country);
+            Address address = new Address(state, country);
             Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
             lastNameFirstFormat +=person.getLastFirstCasualWithCountryName(countryName);
             if (i < data.size()-1) {

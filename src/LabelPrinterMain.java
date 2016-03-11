@@ -1,3 +1,5 @@
+import lib.GuestInfo;
+
 public class LabelPrinterMain {
     public static void main(String[] args) throws Exception{
         GuestInfo guestInfo;
@@ -14,17 +16,14 @@ public class LabelPrinterMain {
             String fileName = args[1];
             if(args[0].equals("-ff")){
                 guestInfo = new GuestInfo(fileName);
-                try {
-                    System.out.print(guestInfo.printLabelWithOptionFF());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                System.out.print(guestInfo.printLabelWithOptionFF());
             }
             if(args[0].equals("-lf") && args.length==3){
                 guestInfo = new GuestInfo(fileName);
                 System.out.print(guestInfo.printLabelWithOptionLFC(args[2]));
             }
-            if(args[0].equals("-ffc")){
+            if(args[0].equals("-ffc") && args.length==3){
+                fileName = args[2];
                 guestInfo = new GuestInfo(fileName);
                 System.out.println(guestInfo.printLabelWithOptionFFC("Bangaladesh"));
             }

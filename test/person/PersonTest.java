@@ -1,11 +1,6 @@
 package person;
 
 import org.junit.Test;
-import person.Address;
-import person.Country;
-import person.Name;
-import person.Person;
-
 import static org.junit.Assert.assertEquals;
 
 public class PersonTest {
@@ -16,9 +11,9 @@ public class PersonTest {
         String gender = "Male";
         int age = 22;
         String city = "Gkp";
-        String state = "U.P.";
+        State state = new State("U.P.");
         Country country = new Country("India");
-        Address address = new Address(city,state,country);
+        Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
 
         assertEquals("Seeta",person.getFirsName());
@@ -31,9 +26,9 @@ public class PersonTest {
         String gender = "Male";
         int age = 22;
        String city = "Gkp";
-        String state = "U.P.";
+        State state =new State( "U.P.");
         Country country = new Country("India");
-        Address address = new Address(city,state,country);
+        Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
 
         assertEquals("Ram",person.getLastName());
@@ -46,9 +41,9 @@ public class PersonTest {
         String gender = "Male";
         int age = 22;
         String city = "Gkp";
-        String state = "U.P.";
+        State state = new State("U.P.");
         Country country = new Country("India");
-        Address address = new Address(city,state,country);
+        Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
 
         assertEquals("Male",person.getGender());
@@ -61,9 +56,9 @@ public class PersonTest {
         String gender = "Male";
         int age = 22;
         String city = "Gkp";
-       String state = "U.P.";
+        State state = new State("U.P.");
         Country country = new Country("India");
-        Address address = new Address(city,state,country);
+        Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
         String expected = "Mr Seeta Ram";
 
@@ -78,9 +73,9 @@ public class PersonTest {
         String gender = "Male";
         int age = 22;
         String city = "Gkp";
-       String state = "U.P.";
+        State state = new State("U.P.");
         Country country = new Country("India");
-        Address address = new Address(city,state,country);
+        Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
         String expected = "Mr Seeta Ram";
 
@@ -95,9 +90,9 @@ public class PersonTest {
         String gender = "Male";
         int age = 22;
         String city = "Gkp";
-       String state = "U.P.";
+       State state = new State("U.P.");
         Country country = new Country("India");
-        Address address = new Address(city,state,country);
+        Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
 
         String expected = "Mr Ram Seeta";
@@ -110,9 +105,9 @@ public class PersonTest {
         String gender = "Male";
         int age = 22;
         String city = "Gkp";
-        String state = "U.P.";
+        State state = new State("U.P.");
         Country country = new Country("India");
-        Address address = new Address(city,state,country);
+        Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
         String expected = "Mr Seeta Ram India";
         assertEquals(expected,person.getFirstLastCasualWithCountryName("India"));
@@ -124,9 +119,9 @@ public class PersonTest {
         String gender = "Male";
         int age = 22;
         String city = "Gkp";
-        String state = "U.P.";
+        State state = new State("U.P.");
         Country country = new Country("India");
-        Address address = new Address(city,state,country);
+        Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
         String expected = "Mr Ram Seeta India";
         assertEquals(expected,person.getLastFirstCasualWithCountryName("Bangaladesh"));
@@ -137,9 +132,9 @@ public class PersonTest {
         String gender = "Male";
         int age = 22;
         String city = "U.P.";
-        String state = "U.P.";
+        State state = new State("U.P.");
         Country country = new Country("India");
-        Address address = new Address(city,state,country);
+        Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
         String expected = "Mr Seeta Ram India 22";
         assertEquals(expected,person.getFirstLastCasualCountryAndAge());
@@ -150,9 +145,9 @@ public class PersonTest {
         String gender = "Male";
         int age = 22;
         String city = "Gkp";
-        String state = "U.P.";
+        State state = new State("U.P.");
         Country country = new Country("India");
-        Address address = new Address(city,state,country);
+        Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
         String expected = "Mr Ram Seeta India 22";
         assertEquals(expected,person.getLastFirstCasualCountryAndAge("India",22));

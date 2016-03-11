@@ -1,15 +1,16 @@
 package person;
 
 public class Address {
-    private String city;
-    private String state;
+    private State state;
     private Country country;
-    public Address(String city, String state, Country country){
-        this.city = city;
+    public Address(State state, Country country){
         this.state = state;
         this.country = country;
     }
     public String getCountryName(){
         return this.country.getName();
+    }
+    public State getStateName(){
+        return this.state;
     }
 }

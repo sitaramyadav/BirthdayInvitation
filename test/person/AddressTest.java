@@ -1,20 +1,25 @@
 package person;
 
 import org.junit.Test;
-import person.Address;
-import person.Country;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class AddressTest {
     @Test
-    public void testGetCountryName() throws Exception {
-        String city = "Gkp";
-        String state = "U.P.";
+    protected void testGetCountryName() throws Exception {
+        State state = new State("U.P.");
         Country country = new Country("India");
-        Address address = new Address(city,state,country);
+        Address address = new Address(state,country);
 
         assertEquals("India",address.getCountryName());
 
+    }
+
+    @Test
+    public void getStateNameGivesTheNameOfState() throws Exception {
+        State state = new State("U.P.");
+        Country country = new Country("India");
+        Address address = new Address(state,country);
+        assertEquals(state,address.getStateName());
     }
 }

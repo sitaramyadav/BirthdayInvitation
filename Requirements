@@ -75,3 +75,30 @@ or
 
 Mr Smith, John, Bangladesh, 20
 Ms Doe, Jane, Bangladesh, 30
+
+---------------------------------------------------------
+                                Version -4
+---------------------------------------------------------
+
+The Royal Family has finally decided on an alternate format for the invitation cover.
+
+                                +----------------------+
+                                | Mr John Smith        |
+                                |----------------------|
+                                | New Delhi, Karnataka |
+                                | India                |
+                                +----------------------+
+
+They are very particular about the size of the boders with a margin of one space between the text and the borders.
+
+They still haven't decided on the format of the name however. This means that the following should also be available as an option if they so change their mind:
+
+                                +----------------------+
+                                | Mr Smith, John       |
+                                |----------------------|
+                                | New Delhi, Karnataka |
+                                | India                |
+                                +----------------------+
+
+
+All other filtering options(such as "by country") should still be available.

@@ -20,6 +20,6 @@ public class AddressTest {
         State state = new State("U.P.");
         Country country = new Country("India");
         Address address = new Address(state,country);
-        assertEquals(state,address.getStateName());
+        assertEquals(state.getName(),address.getStateName());
     }
 }

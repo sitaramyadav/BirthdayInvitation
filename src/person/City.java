@@ -5,7 +5,8 @@ public class City {
     public City (String cityName){
         this.cityName = cityName;
     }
-    public String getCity() {
+    public String getCityName() {
         return this.cityName;
     }
+
 }

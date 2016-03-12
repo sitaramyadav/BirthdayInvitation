@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 public class PersonTest {
 
     @Test
-    public void getFirsNameGivesTheFirstNameFirstWithCasualName() throws Exception {
+    public void getAgeGivesTheAgeOfPerson() throws Exception {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
@@ -16,14 +16,74 @@ public class PersonTest {
         Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
 
-        assertEquals("Seeta",person.getFirsName());
+        assertEquals(22,person.getAge());
+
+    }
+    @Test
+    public void getAddressGivesTheAddressOfPerson() throws Exception {
+        Name name = new Name("Seeta","Ram");
+        String gender = "Male";
+        int age = 22;
+        String city = "Gkp";
+        State state = new State("U.P.");
+        Country country = new Country("India");
+        Address address = new Address(state,country);
+        Person person = new Person(name,gender,age,address);
+        String expected = person.getAddress();
+        String result = "U.P. India";
+        assertEquals(expected,result);
+
+    }
+    @Test
+    public void getCasualNameWithPrefixGivesCasualNameWithMrPrefixForMale() throws Exception {
+        Name name = new Name("Seeta","Ram");
+        String gender = "Male";
+        int age = 22;
+        String city = "Gkp";
+        State state = new State("U.P.");
+        Country country = new Country("India");
+        Address address = new Address(state,country);
+        Person person = new Person(name,gender,age,address);
+        String expected = "Mr Seeta Ram";
+
+        assertEquals(expected,person.getCasualNameWithPrefix());
 
     }
 
     @Test
-    public void getLastNameGivesTheLastNameFirstWithCasualName() throws Exception {
+    public void getCasualNameGivesCasualNameWithMsPrefixForFemale() throws Exception {
+        Name name = new Name("Anu","Radha");
+        String gender = "Female";
+        int age = 22;
+        String city = "Gkp";
+        State state = new State("U.P.");
+        Country country = new Country("India");
+        Address address = new Address(state,country);
+        Person person = new Person(name,gender,age,address);
+        String expected = "Ms Anu Radha";
+
+        assertEquals(expected,person.getCasualNameWithPrefix());
+
+    }
+    @Test
+    public void getFormalNameWithPrefixGivesTheFormalNameWithMrPrefixForMale() throws Exception {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
+        int age = 22;
+        String city = "Gkp";
+        State state =new State( "U.P.");
+        Country country = new Country("India");
+        Address address = new Address(state,country);
+        Person person = new Person(name,gender,age,address);
+
+        assertEquals("Mr Ram Seeta",person.getFormalNameWithPrefix());
+
+    }
+
+    @Test
+    public void getFormalNameWithPrefixGivesTheFormalNameWithMsPrefixForFemale() throws Exception {
+        Name name = new Name("Anu","Radha");
+        String gender = "Female";
         int age = 22;
        String city = "Gkp";
         State state =new State( "U.P.");
@@ -31,12 +91,12 @@ public class PersonTest {
         Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
 
-        assertEquals("Ram",person.getLastName());
+        assertEquals("Ms Radha Anu",person.getFormalNameWithPrefix());
 
     }
 
     @Test
-    public void testGetGender() throws Exception {
+    public void getGender() throws Exception {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";
         int age = 22;
@@ -48,108 +108,5 @@ public class PersonTest {
 
         assertEquals("Male",person.getGender());
 
-    }
-
-    @Test
-    public void testGetFirstLastCasualName() throws Exception {
-        Name name = new Name("Seeta","Ram");
-        String gender = "Male";
-        int age = 22;
-        String city = "Gkp";
-        State state = new State("U.P.");
-        Country country = new Country("India");
-        Address address = new Address(state,country);
-        Person person = new Person(name,gender,age,address);
-        String expected = "Mr Seeta Ram";
-
-        assertEquals(expected,person.getFirstLastCasualName());
-
-
-    }
-
-    @Test
-    public void testGetFirstLastCasualWithCountryName() throws Exception {
-        Name name = new Name("Seeta","Ram");
-        String gender = "Male";
-        int age = 22;
-        String city = "Gkp";
-        State state = new State("U.P.");
-        Country country = new Country("India");
-        Address address = new Address(state,country);
-        Person person = new Person(name,gender,age,address);
-        String expected = "Mr Seeta Ram";
-
-        assertEquals(expected,person.getFirstLastCasualName());
-
-    }
-
-    @Test
-    public void testGetLastFirstCasualNameGivesTheLastFirstCasualName() throws Exception {
-
-        Name name = new Name("Seeta","Ram");
-        String gender = "Male";
-        int age = 22;
-        String city = "Gkp";
-       State state = new State("U.P.");
-        Country country = new Country("India");
-        Address address = new Address(state,country);
-        Person person = new Person(name,gender,age,address);
-
-        String expected = "Mr Ram Seeta";
-
-        assertEquals(expected,person.getLastFirstCasualName());
-    }
-    @Test
-    public void getFirstLastCasualWithCountryName(){
-        Name name = new Name("Seeta","Ram");
-        String gender = "Male";
-        int age = 22;
-        String city = "Gkp";
-        State state = new State("U.P.");
-        Country country = new Country("India");
-        Address address = new Address(state,country);
-        Person person = new Person(name,gender,age,address);
-        String expected = "Mr Seeta Ram India";
-        assertEquals(expected,person.getFirstLastCasualWithCountryName());
-    }
-    @Test
-    public void testGetLastFirstCasualWithCountryName(){
-        Name name = new Name("Seeta" +
-                "","Ram");
-        String gender = "Male";
-        int age = 22;
-        String city = "Gkp";
-        State state = new State("U.P.");
-        Country country = new Country("India");
-        Address address = new Address(state,country);
-        Person person = new Person(name,gender,age,address);
-        String expected = "Mr Ram Seeta India";
-        assertEquals(expected,person.getLastFirstCasualWithCountryName());
-    }
-    @Test
-    public void testGetFirstLastCasualCountryAndAge(){
-        Name name = new Name("Seeta","Ram");
-        String gender = "Male";
-        int age = 22;
-        String city = "U.P.";
-        State state = new State("U.P.");
-        Country country = new Country("India");
-        Address address = new Address(state,country);
-        Person person = new Person(name,gender,age,address);
-        String expected = "Mr Seeta Ram India 22";
-        assertEquals(expected,person.getFirstLastCasualCountryAndAge());
-    }
-    @Test
-    public void getLastFirstCasualCountryAndAge(){
-        Name name = new Name("Seeta","Ram");
-        String gender = "Male";
-        int age = 22;
-        String city = "Gkp";
-        State state = new State("U.P.");
-        Country country = new Country("India");
-        Address address = new Address(state,country);
-        Person person = new Person(name,gender,age,address);
-        String expected = "Mr Ram Seeta India 22";
-        assertEquals(expected,person.getLastFirstCasualCountryAndAge("India",22));
     }
 }

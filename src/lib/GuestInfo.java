@@ -23,7 +23,7 @@ public class GuestInfo {
             State state = new State(guestInformation[5]);
             Address address = new Address(state, country);
             Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
-            firstNameFirstFormat += person.getFirstLastCasualName();
+            firstNameFirstFormat += person.getCasualNameWithPrefix();
             if (i < data.size()-1)
                 firstNameFirstFormat=firstNameFirstFormat+"\n";
             i++;
@@ -44,7 +44,7 @@ public class GuestInfo {
             Country country = new Country(guestInformation[6]);
             Address address = new Address(state, country);
             Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
-            lastNameFirstFormat +=person.getLastFirstCasualName();
+            lastNameFirstFormat +=person.getFormalNameWithPrefix();
             if (i < data.size()-1)
                 lastNameFirstFormat=lastNameFirstFormat+"\n";
             i++;
@@ -64,7 +64,7 @@ public class GuestInfo {
                 Country country = new Country(guestInformation[6]);
                 Address address = new Address(state, country);
                 Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
-                firstNameFirstWithCountry += person.getFirstLastCasualWithCountryName();
+                firstNameFirstWithCountry += person.getCasualNameWithPrefix()+" "+country.getName();
                 if (i < data.size() - 1)
                     firstNameFirstWithCountry += "\n";
             }
@@ -86,7 +86,7 @@ public class GuestInfo {
                 Country country = new Country(guestInformation[6]);
                 Address address = new Address(state, country);
                 Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
-                lastNameFirstFormat += person.getLastFirstCasualWithCountryName();
+                lastNameFirstFormat += person.getFormalNameWithPrefix()+" "+country.getName();
                 if (i < data.size() - 1) {
                     lastNameFirstFormat = lastNameFirstFormat + "\n";
                 }
@@ -111,7 +111,8 @@ public class GuestInfo {
                 int age = Integer.parseInt(guestInformation[3]);
             if (guestInformation[6].equals(countryName) && age>=givenAge) {
                 Person person = new Person(name, guestInformation[2], age, address);
-                firstNameFirstWithCountryAndAge += person.getFirstLastCasualCountryAndAge();
+                City city = new City(guestInformation[4]);
+                firstNameFirstWithCountryAndAge += person.getCasualNameWithPrefix()+" " +country.getName() +" "+person.getAge();
                 if (i < data.size() - 1)
                     firstNameFirstWithCountryAndAge += "\n";
             }
@@ -136,7 +137,8 @@ public class GuestInfo {
             int age = Integer.parseInt(guestInformation[3]);
             if (guestInformation[6].equals(countryName) && age>=givenAge) {
                 Person person = new Person(name, guestInformation[2], age, address);
-                lastNameFirstWithCountryAndAge += person.getLastFirstCasualWithCountryName();
+                lastNameFirstWithCountryAndAge += person.getFormalNameWithPrefix()+" "+country.getName()+" "+
+                person.getAge();
                 if (i < data.size() - 1)
                     lastNameFirstWithCountryAndAge += "\n";
             }

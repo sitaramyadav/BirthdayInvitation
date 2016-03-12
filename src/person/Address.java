@@ -10,7 +10,7 @@ public class Address {
     public String getCountryName(){
         return this.country.getName();
     }
-    public State getStateName(){
-        return this.state;
+    public String getStateName(){
+        return this.state.getName();
     }
 }

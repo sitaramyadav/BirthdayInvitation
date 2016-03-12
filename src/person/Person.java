@@ -13,63 +13,31 @@ public class Person {
         this.gender = gender;
         this.address = address;
     }
-    public String getFirsName(){
-
-        return this.name.getFirstName();
-    }
-
-    public String getLastName(){
-
-        return this.name.getLastName();
-    }
 
     public String getGender(){
-
         return this.gender;
     }
+    public int getAge(){
+        return this.age;
+    }
 
-    public String getFirstLastCasualName(){
+
+    public String getAddress(){
+        return this.address.getStateName()+" "+this.address.getCountryName();
+    }
+    public String getCasualNameWithPrefix(){
         if(this.gender.equals("Male")){
-            return "Mr"+" "+this.getFirsName()+" "+this.getLastName();
+            return "Mr"+" "+this.name.getFirstName()+" "+this.name.getLastName();
         } else
-            return "Ms"+" "+this.getFirsName()+" "+this.getLastName();
+            return "Ms"+" "+this.name.getFirstName()+" "+this.name.getLastName();
     }
 
 
-    public String getLastFirstCasualName(){
+    public String getFormalNameWithPrefix(){
         if(this.getGender().equals("Male")){
-            return "Mr"+" "+this.getLastName()+" "+this.getFirsName();
+            return "Mr"+" "+this.name.getLastName()+" "+this.name.getFirstName();
         } else
-            return "Ms"+" "+this.getLastName()+" "+this.getFirsName();
+            return "Ms"+" "+this.name.getLastName()+" "+this.name.getFirstName();
 
-    }
-    public String getFirstLastCasualWithCountryName() {
-
-            if (this.getGender().equals("Male")) {
-                return "Mr" + " " + this.getFirsName() + " " + this.getLastName() + " " + this.address.getCountryName();
-            } else {
-                return "Ms" + " " + this.getFirsName() + " " + this.getLastName() + " " + this.address.getCountryName();
-            }
-    }
-
-    public String getLastFirstCasualWithCountryName() {
-            if (this.getGender().equals("Male")) {
-            return "Mr"+" "+this.getLastName()+" "+this.getFirsName()+" "+this.address.getCountryName();
-        } else
-            return "Ms"+" "+this.getLastName()+" "+this.getFirsName()+" "+this.address.getCountryName();
-
-    }
-
-    public String getFirstLastCasualCountryAndAge(){
-        if(this.getGender().equals("Male")){
-            return "Mr"+" "+this.getFirsName()+" "+this.getLastName()+" "+this.address.getCountryName()+" "+this.age;
-        } else
-            return "Ms"+" "+this.getFirsName()+" "+this.getLastName()+" "+this.address.getCountryName()+" "+this.age;
-    }
-    public String getLastFirstCasualCountryAndAge(String india, int i) {
-        if(this.getGender().equals("Male")){
-            return "Mr"+" "+this.getLastName()+" "+this.getFirsName()+" "+this.address.getCountryName()+" "+this.age;
-        } else
-            return "Ms"+" "+this.getLastName()+" "+this.getFirsName()+" "+this.address.getCountryName()+" "+this.age;
     }
 }

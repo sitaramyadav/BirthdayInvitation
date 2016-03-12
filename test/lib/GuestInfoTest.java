@@ -65,9 +65,9 @@ public class GuestInfoTest {
 
     }
     @Test
-    public void printLabelWithOptionLFCItPrintTheGuestInfoLastNameFirstWithCountryName() throws Exception {
+    public void printLabelWithOptionLFCIAtPrintTheGuestInfoLastFirstCasualNameWithCountryAndName() throws Exception {
         GuestInfo guestInfo = new GuestInfo("./data/sampleData");
-        String expected = "Ms Dooley Melody Bangladesh";
+        String expected = "Ms Dooley Melody Bangladesh 31";
         String countryName = "Bangladesh";
         int age = 20;
         String result = guestInfo.printLabelWithOptionLFCA(countryName,age);

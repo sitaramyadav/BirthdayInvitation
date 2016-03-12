@@ -32,7 +32,7 @@ public class GuestInfo {
         return firstNameFirstFormat;
     }
 
-    public String printLabelWithOptionLL() throws Exception{
+    public String printLabelWithOptionLF() throws Exception{
         String guestInfo, lastNameFirstFormat = "";
         String[] guestInformation;
         int i=0;
@@ -57,16 +57,17 @@ public class GuestInfo {
         int i=0;
         while(i<data.size()) {
             guestInfo = (String) data.get(i);
-            guestInformation = guestInfo.split("");
-            Name name = new Name(guestInformation[0], guestInformation[1]);
-            String city = guestInformation[4];
-            State state = new State(guestInformation[5]);
-            Country country = new Country(guestInformation[6]);
-            Address address = new Address(state, country);
-            Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
-            firstNameFirstWithCountry +=person.getFirstLastCasualWithCountryName(countryName);
-            if (i < data.size()-1)
-                firstNameFirstWithCountry+="\n";
+            guestInformation = guestInfo.split(",");
+            if (guestInformation[6].equals(countryName)) {
+                Name name = new Name(guestInformation[0], guestInformation[1]);
+                State state = new State(guestInformation[5]);
+                Country country = new Country(guestInformation[6]);
+                Address address = new Address(state, country);
+                Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
+                firstNameFirstWithCountry += person.getFirstLastCasualWithCountryName();
+                if (i < data.size() - 1)
+                    firstNameFirstWithCountry += "\n";
+            }
             i++;
         }
         return firstNameFirstWithCountry;
@@ -78,18 +79,70 @@ public class GuestInfo {
         int i=0;
         while(i<data.size()) {
             guestInfo = (String) data.get(i);
-            guestInformation = guestInfo.split("");
-            Name name = new Name(guestInformation[0], guestInformation[1]);
-            State state = new State(guestInformation[5]);
-            Country country = new Country(guestInformation[6]);
-            Address address = new Address(state, country);
-            Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
-            lastNameFirstFormat +=person.getLastFirstCasualWithCountryName(countryName);
-            if (i < data.size()-1) {
-                lastNameFirstFormat = lastNameFirstFormat +"\n";
+            guestInformation = guestInfo.split(",");
+            if(countryName.equals(guestInformation[6])) {
+                Name name = new Name(guestInformation[0], guestInformation[1]);
+                State state = new State(guestInformation[5]);
+                Country country = new Country(guestInformation[6]);
+                Address address = new Address(state, country);
+                Person person = new Person(name, guestInformation[2], Integer.parseInt(guestInformation[3]), address);
+                lastNameFirstFormat += person.getLastFirstCasualWithCountryName();
+                if (i < data.size() - 1) {
+                    lastNameFirstFormat = lastNameFirstFormat + "\n";
+                }
             }
             i++;
         }
         return lastNameFirstFormat;
     }
+
+    public String printLabelWithOptionFFCA(String countryName,int givenAge) throws Exception{
+        String guestInfo, firstNameFirstWithCountryAndAge = "";
+        String[] guestInformation;
+        int i=0;
+        while(i<data.size()) {
+            guestInfo = (String) data.get(i);
+            guestInformation = guestInfo.split(",");
+
+                Name name = new Name(guestInformation[0], guestInformation[1]);
+                State state = new State(guestInformation[5]);
+                Country country = new Country(guestInformation[6]);
+                Address address = new Address(state, country);
+                int age = Integer.parseInt(guestInformation[3]);
+            if (guestInformation[6].equals(countryName) && age>=givenAge) {
+                Person person = new Person(name, guestInformation[2], age, address);
+                firstNameFirstWithCountryAndAge += person.getFirstLastCasualCountryAndAge();
+                if (i < data.size() - 1)
+                    firstNameFirstWithCountryAndAge += "\n";
+            }
+            i++;
+        }
+        return firstNameFirstWithCountryAndAge;
+    }
+
+    public String printLabelWithOptionLFCA(String countryName, int givenAge) {
+
+        String guestInfo, lastNameFirstWithCountryAndAge = "";
+        String[] guestInformation;
+        int i=0;
+        while(i<data.size()) {
+            guestInfo = (String) data.get(i);
+            guestInformation = guestInfo.split(",");
+
+            Name name = new Name(guestInformation[0], guestInformation[1]);
+            State state = new State(guestInformation[5]);
+            Country country = new Country(guestInformation[6]);
+            Address address = new Address(state, country);
+            int age = Integer.parseInt(guestInformation[3]);
+            if (guestInformation[6].equals(countryName) && age>=givenAge) {
+                Person person = new Person(name, guestInformation[2], age, address);
+                lastNameFirstWithCountryAndAge += person.getLastFirstCasualWithCountryName();
+                if (i < data.size() - 1)
+                    lastNameFirstWithCountryAndAge += "\n";
+            }
+            i++;
+        }
+        return lastNameFirstWithCountryAndAge;
+    }
+
 }

@@ -1,8 +1,5 @@
 package person;
 
-import person.Address;
-import person.Name;
-
 public class Person {
     private String gender;
     private Name name;
@@ -46,18 +43,16 @@ public class Person {
             return "Ms"+" "+this.getLastName()+" "+this.getFirsName();
 
     }
-    public String getFirstLastCasualWithCountryName(String countryName) {
-        if (countryName.equals(this.address.getCountryName())) {
+    public String getFirstLastCasualWithCountryName() {
+
             if (this.getGender().equals("Male")) {
                 return "Mr" + " " + this.getFirsName() + " " + this.getLastName() + " " + this.address.getCountryName();
             } else {
                 return "Ms" + " " + this.getFirsName() + " " + this.getLastName() + " " + this.address.getCountryName();
             }
-        }
-        return "";
     }
 
-    public String getLastFirstCasualWithCountryName(String countryName) {
+    public String getLastFirstCasualWithCountryName() {
             if (this.getGender().equals("Male")) {
             return "Mr"+" "+this.getLastName()+" "+this.getFirsName()+" "+this.address.getCountryName();
         } else

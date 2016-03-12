@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 public class AddressTest {
     @Test
-    protected void testGetCountryName() throws Exception {
+    public void testGetCountryName() throws Exception {
         State state = new State("U.P.");
         Country country = new Country("India");
         Address address = new Address(state,country);

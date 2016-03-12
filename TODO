@@ -30,28 +30,28 @@ Output format:-
 
 runnableFile command fileName
 ----------------------------------------v1-----------------------------
-java LabelPrinterMain -fl record.txt
+java app.LabelPrinterMain -fl record.txt
 Mr John Smith
 
-java LabelPrinterMain -lf record.txt
+java app.LabelPrinterMain -lf record.txt
 Mr Smith John
 ----------------------------------------v2-----------------------------
-java LabelPrinterMain -flc Bangaladesh record.txt
+java app.LabelPrinterMain -flc Bangaladesh record.txt
 Mr John Smith Bangaladesh
 
-java LabelPrinterMain -lfc Bangaladesh record.txt
+java app.LabelPrinterMain -lfc Bangaladesh record.txt
 Mr Smith John Bangaladesh
 
 ----------------------------------------v3-----------------------------
-java LabelPrinterMain -flca Bangaladesh 20 record.txt
+java app.LabelPrinterMain -flca Bangaladesh 20 record.txt
 Mr John Smith Bangaladesh 20
 
-java LabelPrinterMain -lfca Bangaladesh 30 record.txt
+java app.LabelPrinterMain -lfca Bangaladesh 30 record.txt
 Mr Smith John Bangaladesh 30
 
 
 ----------------------------------------v4-----------------------------
-java LabelPrinterMain -fla Bangalore Karnataka India record.txt
+java app.LabelPrinterMain -fla Bangalore Karnataka India record.txt
 
                                 +----------------------+
                                 | Mr John Smith        |
@@ -61,7 +61,7 @@ java LabelPrinterMain -fla Bangalore Karnataka India record.txt
                                 +----------------------+
 
 
-java LabelPrinterMain -lfa  Bangalore Karnataka
+java app.LabelPrinterMain -lfa  Bangalore Karnataka
 
                                +----------------------+
                                | Mr Smith, John       |

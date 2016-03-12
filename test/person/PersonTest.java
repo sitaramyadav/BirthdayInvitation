@@ -110,7 +110,7 @@ public class PersonTest {
         Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
         String expected = "Mr Seeta Ram India";
-        assertEquals(expected,person.getFirstLastCasualWithCountryName("India"));
+        assertEquals(expected,person.getFirstLastCasualWithCountryName());
     }
     @Test
     public void testGetLastFirstCasualWithCountryName(){
@@ -124,7 +124,7 @@ public class PersonTest {
         Address address = new Address(state,country);
         Person person = new Person(name,gender,age,address);
         String expected = "Mr Ram Seeta India";
-        assertEquals(expected,person.getLastFirstCasualWithCountryName("Bangaladesh"));
+        assertEquals(expected,person.getLastFirstCasualWithCountryName());
     }
     @Test
     public void testGetFirstLastCasualCountryAndAge(){

@@ -3,14 +3,16 @@ package person;
 public class Person {
     private String gender;
     private Name name;
-    protected int age;
+    private int age;
+    private City city;
     private Address address;
 
 
-    public Person(Name name, String gender, int age, Address address){
+    public Person(Name name, String gender, int age, City city, Address address){
         this.name = name;
-        this.age = age;
         this.gender = gender;
+        this.age = age;
+        this.city = city;
         this.address = address;
     }
 
@@ -19,6 +21,12 @@ public class Person {
     }
     public int getAge(){
         return this.age;
+    }
+    public String getCountryName(){
+        return this.address.getCountryName();
+    }
+    public String getCityName(){
+        return this.city.getCityName();
     }
 
 

@@ -10,15 +10,17 @@ import static org.junit.Assert.*;
 public class DataReaderTest {
 
     @Test
-    public void testGetData() throws Exception {
-        List<String> resultList;
-        LinkedList<String> expectedList = new LinkedList<>();
+    public void getDataReadsTheFileAndGivesListOfLines() throws Exception {
+        List<String> actual;
+        LinkedList<String> expected = new LinkedList<>();
         DataReader dataReader = new DataReader("./data/sampleData");
-        resultList = dataReader.getData();
-        expectedList.add("Julius,Barrows,Male,18,Veda haven,Vermont,Macedonia");
-        expectedList.add("Melody,Dooley,Female,31,West Shanna,Vermont,Bangladesh");
+        actual = dataReader.getData();
+        expected.add("Julius,Barrows,Female,18,Veda haven,Vermont,Macedonia");
+        expected.add("Melody,Dooley,Female,31,West Shanna,Vermont,Bangladesh");
+        expected.add("Carlos,Johns,Male,35,West Shanna,South Carolina,Bangladesh");
 
-        assertEquals(resultList,expectedList);
+
+        assertEquals(expected, actual);
 
     }
 }

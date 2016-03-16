@@ -1,30 +1,30 @@
 package lib;
 
-import person.Address;
-import person.City;
-import person.Country;
-import person.State;
 
 public class Filter {
     private final String[] args;
-    private String file,countryName;
-    private  int age;
 
     public Filter(String[] args) throws Exception{
         this.args = args;
     }
-
     public String getOption() throws Exception{
-        return args[0];
+        final String option = args[0];
+        return option;
     }
+
     public String getFile(){
-       return args[args.length-1];
+        final String fileName = args[args.length - 1];
+        return fileName;
+
     }
     public String getCountryName(){
-        return args[1];
+        final String countryName = args[1];
+        return countryName;
     }
+
     public int getAge() throws Exception{
-        return Integer.parseInt( args[2]);
+       final int age = Integer.parseInt(args[2]);
+        return age;
     }
 
 }

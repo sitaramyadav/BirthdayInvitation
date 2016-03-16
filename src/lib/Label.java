@@ -6,11 +6,12 @@ import java.util.List;
 import java.util.Objects;
 
 public class Label {
-    private DataReader reader;
+    private List<String> reader;
     private Filter filter;
 
-    public Label(DataReader reader, Filter filter) {
+    public Label(List<String> reader, Filter filter) {
         this.reader = reader;
+        this.reader = (List<String>) reader;
         this.filter = filter;
     }
 
@@ -28,7 +29,8 @@ public class Label {
             State state = new State(stateName);
             String countryName = guestDetails[6];
             Country country = new Country(countryName);
-            Address address = new Address(city, state, country);
+            Address address;
+        address = new Address(city, state, country);
         return new Person(name, gender, age, city, address);
 
     }
@@ -59,15 +61,13 @@ public class Label {
         return label;
     }
 
-    private String getLabelForOptionFFC(Person person) {
-        System.out.println(this.filter.getCountryName()+"===="+person.getCountryName());
-
+    private String getLabelForOptionFFC(Person person) throws Exception{
         if(this.filter.getCountryName().equals(person.getCountryName()))
             return person.getCasualNameWithPrefix()+" "+person.getCountryName();
         return  "";
     }
 
-    private String getLabelForOptionLFC(Person person){
+    private String getLabelForOptionLFC(Person person) throws Exception{
         if(this.filter.getCountryName().equals(person.getCountryName()))
             return person.getFormalNameWithPrefix() + " " + person.getCountryName();
         return "";
@@ -89,7 +89,7 @@ public class Label {
         if(Objects.equals(filter.getOption(), "-h"))
             return "Please Enter -h for help";
         else {
-            List list = reader.getData();
+            List list = reader;
             for (Object aList : list) {
                 Person person = getPerson((String) aList);
                 label += getLabel(person, filter.getOption());

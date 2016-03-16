@@ -20,21 +20,6 @@ public class PersonTest {
 
     }
     @Test
-    public void getAddressGivesTheAddressOfPerson() throws Exception {
-        Name name = new Name("Seeta","Ram");
-        String gender = "Male";
-        int age = 22;
-        City city = new City("Gkp");
-        State state = new State("U.P.");
-        Country country = new Country("India");
-        Address address = new Address(city, state,country);
-        Person person = new Person(name,gender,age, city, address);
-        String expected = person.getAddress();
-        String result = "U.P. India";
-        assertEquals(expected,result);
-
-    }
-    @Test
     public void getCasualNameWithPrefixGivesCasualNameWithMrPrefixForMale() throws Exception {
         Name name = new Name("Seeta","Ram");
         String gender = "Male";

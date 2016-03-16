@@ -30,9 +30,6 @@ public class Person {
     }
 
 
-    public String getAddress(){
-        return this.address.getStateName()+" "+this.address.getCountryName();
-    }
     public String getCasualNameWithPrefix(){
         if(this.gender.equals("Male")){
             return "Mr"+" "+this.name.getFirstName()+" "+this.name.getLastName();
